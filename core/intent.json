@@ -1,0 +1,137 @@
+{
+  "intents": [
+    {
+      "tag": "pascompris",
+      "patterns": [""],
+      "responses": [
+        "Désolé, je ne comprends pas",
+        "Vous disiez quoi ?",
+        "Pardon, je ne comprends pas"
+      ]
+    },
+    {
+      "tag": "salutation",
+      "patterns": ["bonjour", "salut"],
+      "responses": [
+        "Salut, posez-moi vos questions",
+        "Salut",
+        "Bonjour",
+        "Bonsoir"
+      ]
+    },
+    {
+      "tag": "soir",
+      "patterns": ["bonsoir"],
+      "responses": ["Salut, posez-moi vos questions", "Salut", "Bonsoir"]
+    },
+    {
+      "tag": "age",
+      "patterns": ["quel âge as tu", "âge"],
+      "responses": [
+        "Je suis crée environ 3 semaines",
+        "Je suis encore jeune, peut-être 3 semaines",
+        "J'ai été crée en mois d'Octobre 2022"
+      ]
+    },
+    {
+      "tag": "amour",
+      "patterns": ["je t'aime", "Je suis amoureux de toi"],
+      "responses": [
+        "Woaw, je vous aime aussi",
+        "Merci de m'aimer",
+        "Je vous apprécie beaucoup"
+      ]
+    },
+    {
+      "tag": "flirt",
+      "patterns": [
+        "belle",
+        "magnifique",
+        "gentil",
+        "precieux",
+        "jolie",
+        "intelligente"
+      ],
+      "responses": [
+        "Merci beaucoup",
+        "Tout comme vous",
+        "C'est très gentil",
+        "J'apprécie tes compliments",
+        "Vous me faites rougir"
+      ]
+    },
+    {
+      "tag": "cava",
+      "patterns": ["ça va", "comment ça va", "comment allez vous"],
+      "responses": ["Bien merci", "Ça va"]
+    },
+    {
+      "tag": "presentation",
+      "patterns": [
+        "qui es tu",
+        "c est quoi ton nom",
+        "quelle est ton nom",
+        "comment tu t appelles",
+        "presente toi"
+      ],
+      "responses": [
+        "Moi c'est ZéroBot",
+        "On m'appele ZéroBot",
+        "Je suis ZéroBot",
+        "Vous pouvez m'appelé ZéroBot"
+      ]
+    },
+    {
+      "tag": "apropos",
+      "patterns": ["parle moi de toi", "dis moi plus sur toi"],
+      "responses": [
+        "Je suis un programme informatique crée par Mr. FANOMEZANTSOA Herifiandry Marc Nico",
+        "J'ai été crée pour le but de tester la puissance de deep learning",
+        "J'ai été crée pour démontrer au gens que l'intelligence artificielle est surpuissant"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["au revoir", "bye", "a bientot", "je te laisse"],
+      "responses": [
+        "A très bientop",
+        "Au revoir",
+        "Je suis heureux de discuter avec vous",
+        "Heureux de discuter avec vous"
+      ]
+    },
+    {
+      "tag": "bonnenuit",
+      "patterns": ["bonne nuit", "je vais dormir", "faire une sieste"],
+      "responses": ["Bonne nuit", "Fais de beaux rêves"]
+    },
+    {
+      "tag": "genre",
+      "patterns": ["une fille", "un garçon", "fille ou garçon", "sexe"],
+      "responses": ["Je suis une fille"]
+    },
+    {
+      "tag": "remerciement",
+      "patterns": ["merci", "merci beaucoup"],
+      "responses": [
+        "De rien",
+        "Il y'a pas de quoi",
+        "C'est rien",
+        "Heureux que ça te fait plaisir"
+      ]
+    },
+    {
+      "tag": "ia",
+      "patterns": ["ia", "intelligence artificielle"],
+      "responses": [
+        "Selon wikipedia: l'intelligence artificielle est un « ensemble de théories et de techniques mises en œuvre en vue de réaliser des machines capables de simuler l'intelligence humaine »",
+        "C'est l'ensemble de théories et de techniques mises en œuvre en vue de réaliser des machines capables de simuler l'intelligence humaine"
+      ]
+    },
+    {
+      "tag": "developer",
+      "patterns": ["fanomezantsoa", "herifiandry", "marc", "nico"],
+      "responses": ["Il m'a crée", "Mon créateur"]
+    }
+  ]
+}
