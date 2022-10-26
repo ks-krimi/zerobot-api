@@ -17,3 +17,29 @@ def get_messages(limit: int = 10, skip: int = 0, db: Session = Depends(get_db), 
     return db.query(message_model).\
         filter(message_model.to == current_user.id).\
         limit(limit).offset(skip).all()
+
+
+def create_response(to: int, content: str, by: str, db: Session):
+    new_message = message_model(
+        to=to, content=content, by=by, owner_id=to)
+    db.add(new_message)
+    db.commit()
+    db.refresh(new_message)
+    return new_message
+
+
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=List[Message])
+def create_message_and_get_response(message: MessageCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    new_message = message_model(
+        **message.dict(), to=current_user.id, owner_id=current_user.id)
+    db.add(new_message)
+    db.commit()
+    db.refresh(new_message)
+
+    ints = predict_class(message.content)
+    res = get_response(ints, intents)
+
+    new_res = create_response(
+        to=current_user.id, content=res, by=By.zerobot, db=db)
+
+    return {new_message, new_res}
