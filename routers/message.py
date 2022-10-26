@@ -43,3 +43,10 @@ def create_message_and_get_response(message: MessageCreate, db: Session = Depend
         to=current_user.id, content=res, by=By.zerobot, db=db)
 
     return {new_message, new_res}
+
+
+@router.delete("/", status_code=status.HTTP_204_NO_CONTENT)
+def remove_messages(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    db.query(message_model).delete(synchronize_session=False)
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
