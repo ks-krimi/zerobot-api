@@ -37,3 +37,10 @@ def get_user(id: int, db: Session = Depends(get_db), current_user: User = Depend
             detail=f"User with id {id} does not exist"
         )
     return user
+
+
+@router.delete("/", status_code=status.HTTP_204_NO_CONTENT)
+def remove_users(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    db.query(model_user).delete(synchronize_session=False)
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
