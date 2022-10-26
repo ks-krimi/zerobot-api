@@ -50,3 +50,16 @@ def remove_messages(db: Session = Depends(get_db), current_user: User = Depends(
     db.query(message_model).delete(synchronize_session=False)
     db.commit()
     return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@router.delete("/{id}", status_code=status.HTTP_204_NO_CONTENT)
+def remove_message(id: int, db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    message = db.query(message_model).filter(message_model.id == id)
+    if message.first() == None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f"Message with id {id} does not exist"
+        )
+    message.delete(synchronize_session=False)
+    db.commit()
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
