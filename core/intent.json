@@ -45,12 +45,12 @@
     {
       "tag": "flirt",
       "patterns": [
-        "belle",
-        "magnifique",
-        "gentil",
-        "precieux",
-        "jolie",
-        "intelligente"
+        "tu es belle",
+        "tu es magnifique",
+        "tu es gentil",
+        "tu es precieux",
+        "tu es jolie",
+        "tu es intelligente"
       ],
       "responses": [
         "Merci beaucoup",
